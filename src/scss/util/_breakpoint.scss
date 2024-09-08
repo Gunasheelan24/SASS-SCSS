@@ -1,0 +1,12 @@
+$beakpoint-media: (
+    "small": 35.875em,
+    "medium": 60.75em,
+    "large": 73.375em,
+    "xlarge": 80.438em
+);
+
+@mixin handleBreakPoint($size) {
+    @media (min-width: map-get($beakpoint-media, $size)) {
+        @content;
+    }
+}

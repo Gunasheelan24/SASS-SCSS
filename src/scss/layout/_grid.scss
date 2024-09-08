@@ -1,0 +1,33 @@
+@use "../util" as utility;
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    grid-template-columns: 1fr;
+    gap: 2.3rem;
+    max-width: 1400px;
+    margin-inline: auto;
+
+    &__main,
+    &__aside {
+     padding: 0.5rem 0.5rem;
+    }
+ 
+    &__main {
+        background-color: purple;
+    }
+
+    &__aside {
+        background-color: rgb(0, 62, 132);
+    }
+
+    // @media screen and (min-width: 574px) {
+    //     grid-template-columns: 2fr 1fr;
+    //     grid-template-rows: 1fr;
+    // }
+
+    @include utility.handleBreakPoint(large) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
